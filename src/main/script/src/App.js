@@ -12,7 +12,9 @@ class App extends Component {
             <Header/>
             <Search/>
             <Content/>
+            <p> testsing 1 </p>
         </div>
+        
     );
 }
 }
