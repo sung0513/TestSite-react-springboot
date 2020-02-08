@@ -1,17 +1,22 @@
-import React, { Component } from 'react';
+import React,{ Component } from 'react';
+import Header from './components/Header';
+import Search from './components/Search';
+import Content from './components/Content';
+
 import 'whatwg-fetch';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h2>스프링부트 리액트 연동 확인</h2>
-    </div>
-  );
+class App extends Component {
+  render(){
+    return  (
+        <div>
+            <Header/>
+            <Search/>
+            <Content/>
+        </div>
+    );
 }
-
-
+}
 
   export default App;
