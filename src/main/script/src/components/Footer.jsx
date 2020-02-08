@@ -1,13 +1,12 @@
 import React,{ Component } from 'react';
 
 
-class Header extends Component {
+class Footer extends Component {
     render(){
         return (
-            <h1>Logo</h1>
-
+            <h1>Footer</h1>
         );
     }
 }
 
-export default Header;
+export default Footer;

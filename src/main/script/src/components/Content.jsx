@@ -1,12 +1,11 @@
 import React,{ Component } from 'react';
+import Category from './Category';
 
-
-class Content extends React.Component {
+class Content extends Component {
+    
     render(){
         return (
-            <div>
-                <h2>Content</h2>
-            </div>
+            <Category/>
         );
     }
 }
