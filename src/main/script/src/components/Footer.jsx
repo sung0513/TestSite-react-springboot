@@ -6,7 +6,7 @@ class Footer extends Component {
         return (
             <>
             <h1>Footer</h1>
-            <p>gsdsfd</p>
+            <p>lklklklkl</p>
             </>
         );
     }
