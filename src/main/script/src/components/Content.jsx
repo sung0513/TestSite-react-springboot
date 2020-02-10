@@ -1,11 +1,16 @@
 import React,{ Component } from 'react';
-import Category from './Category';
-
+import FoodImg from '../img/chicken.png'
+import {Card} from 'react-bootstrap'
 class Content extends Component {
     
     render(){
         return (
-            <Category/>
+            <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={FoodImg} />
+    <Card.Body>
+  <Card.Title>Chicken</Card.Title>
+  </Card.Body>
+</Card>
         );
     }
 }
