@@ -1,14 +1,15 @@
 import React,{ Component } from 'react';
-
-
+import logo from '../img/logo.png';
+import {Button,Image} from 'react-bootstrap';
 class Header extends Component {
   render(){
     return (
-      <div>
-        <img src='./logo.png'/>
-        <button>로그인</button>
-        <button>회원가입</button>
-        </div>
+      <>
+      <Image src={logo} />
+        <Button>로그인</Button>
+        <Button>회원가입</Button>
+
+</>
     );
 }
 }
