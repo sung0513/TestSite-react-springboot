@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import logo from '../img/logo.png';
+import logo from '../img/logo.jpg';
 import {Button,Image} from 'react-bootstrap';
 class Header extends Component {
   render(){
