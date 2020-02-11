@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from './Header';
 import Search from './Search';
 import Content from './Content';
+import Footer from './Footer';
 
 class TestContainer extends Component {
   render() {
@@ -10,6 +11,7 @@ class TestContainer extends Component {
         <Header />
         <Search />
         <Content />
+        <Footer />
       </>
     );
   }

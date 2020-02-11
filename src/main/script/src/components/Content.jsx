@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import FoodImg from "../img/chicken.png";
-import { Card, Row } from "react-bootstrap";
+import { Card, Row ,Button} from "react-bootstrap";
+import '../App.css';
 class Content extends Component {
   render() {
     const categoryList = [
@@ -14,14 +15,19 @@ class Content extends Component {
     ];
     return (
       <Row>
+        <div>
         {categoryList.map(list => 
-          <Card style={{ width: "18rem" }}>
+          <Card className="card">
             <Card.Img variant="top" src={FoodImg} />
             <Card.Body>
               <Card.Title>{list}</Card.Title>
             </Card.Body>
+            <div className="as">
+            <Button className="Button">이동</Button>
+            </div>
           </Card>
         )}
+        </div>
       </Row>
     );
   }
