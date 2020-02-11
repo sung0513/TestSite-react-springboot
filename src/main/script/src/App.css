@@ -1,21 +1,22 @@
-.card{
+.logo{
+    width:100px;
+    height:50px;
+
+}
+
+.Button{
+    width:100px;
     text-align:center;
+    padding-left:100px;
+}
+.card{
+    float:left;
+    position:relative;
+    width:200px;
+    height:200px;
     margin-left:50px;
-    margin-bottom:50px;
-    color:white;
-}
 
-.button1{
-    padding-right:10px;
-    border-right:1px solid white;
 }
-.button2{
-    padding-left:10px;
-}
-
-.search{
-    display:table;
-    margin-left:auto;
-    margin-right:auto;
-    width:450px;
+.as{
+    margin-left:50px;
 }
