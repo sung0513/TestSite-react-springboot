@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Card, Row, Container } from "react-bootstrap";
+import '../App.css';
 class Content extends Component {
   render() {
     const categoryList = [
@@ -12,13 +13,13 @@ class Content extends Component {
       { id: 7, name: "분식" }
     ];
     return (
-      <Container>
+      <Container >
       <Row>
         {categoryList.map(list => (
-          <Card className="text-center" style={{ width: "20rem" }}>
+          <Card className="card" bg="dark" style={{ width: "20rem" }}>
             <Card.Img
               width="300"
-              height="150" /*src={require("../img/category"+list.id+".png")}*/
+              height="150" src={require("../img/category"+list.id+".png")}
             />
             <Card.Body>
               <Card.Title>{list.name}</Card.Title>
