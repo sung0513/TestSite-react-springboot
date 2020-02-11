@@ -6,6 +6,8 @@
 
 ## Architecture 
 
+<img src="README_IMG/Architecture.png" width="800" height ="400"> 
+
 ## Boot
 ```
 Spring start
