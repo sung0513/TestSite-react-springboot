@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-import FoodImg from "../img/chicken.png";
-import { Card, Row ,Button} from "react-bootstrap";
-import '../App.css';
-=======
 import { Card, Row, Container } from "react-bootstrap";
->>>>>>> 963298b4f3ef9f61c5b10a951eba62603153e511
+import '../App.css';
 class Content extends Component {
   render() {
     const categoryList = [
@@ -18,34 +13,19 @@ class Content extends Component {
       { id: 7, name: "분식" }
     ];
     return (
-      <Container>
+      <Container >
       <Row>
-<<<<<<< HEAD
-        <div>
-        {categoryList.map(list => 
-          <Card className="card">
-            <Card.Img variant="top" src={FoodImg} />
-=======
         {categoryList.map(list => (
-          <Card className="text-center" style={{ width: "20rem" }}>
+          <Card className="card" bg="dark" style={{ width: "20rem" }}>
             <Card.Img
               width="300"
-              height="150" /*src={require("../img/category"+list.id+".png")}*/
+              height="150" src={require("../img/category"+list.id+".png")}
             />
->>>>>>> 963298b4f3ef9f61c5b10a951eba62603153e511
             <Card.Body>
               <Card.Title>{list.name}</Card.Title>
             </Card.Body>
-            <div className="as">
-            <Button className="Button">이동</Button>
-            </div>
           </Card>
-<<<<<<< HEAD
-        )}
-        </div>
-=======
         ))}
->>>>>>> 963298b4f3ef9f61c5b10a951eba62603153e511
       </Row>
       </Container>
     );

@@ -6,6 +6,7 @@ class Search extends Component {
   render() {
     return (
       <Jumbotron>
+        <div className="search">
         <Form>
           <InputGroup>
             <Button variant="light">
@@ -14,15 +15,16 @@ class Search extends Component {
 
             <Form.Control
               type="text"
-              placeholder="Search"
+              placeholder="주소입력"
               aria-describedby="inputGroupPrepend"
               required
             />
             <InputGroup.Append>
-              <Button variant="dark">Search</Button>
+              <Button variant="dark">검색</Button>
             </InputGroup.Append>
           </InputGroup>
         </Form>
+        </div>
       </Jumbotron>
     );
   }
