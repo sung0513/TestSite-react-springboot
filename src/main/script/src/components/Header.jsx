@@ -16,7 +16,7 @@ class Header extends Component {
     return (
       <>
         <Navbar bg="dark" variant="dark">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <Image alt="" src={logo} width="50" height="50" />
             {"   "}
             React Bootstrap
