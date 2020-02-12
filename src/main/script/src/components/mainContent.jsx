@@ -15,8 +15,17 @@ class Content extends Component {
     return (
       <Container >
       <Row>
+      <Card key="0" className="card" bg="dark" style={{ width: "20rem" }}>
+             <a href="/second"><Card.Img
+              width="300"
+              height="150" 
+            /></a>
+            <Card.Body>
+              <Card.Title>전체보기</Card.Title>
+            </Card.Body>
+          </Card>
         {categoryList.map(list => (
-          <Card className="card" bg="dark" style={{ width: "20rem" }}>
+          <Card key={list.id} className="card" bg="dark" style={{ width: "20rem" }}>
              <a href={"category"+list.id}><Card.Img
               width="300"
               height="150" src={require("../img/category"+list.id+".png")}
