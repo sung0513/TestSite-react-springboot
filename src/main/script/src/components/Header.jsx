@@ -1,9 +1,18 @@
 
 import React, { Component } from "react";
 import logo from "../img/logo.png";
-import { Image, Navbar, Button } from "react-bootstrap";
+import { Image, Navbar, Button, Modal} from "react-bootstrap";
+
 class Header extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      show:false
+    }
+    
+  }
   render() {
+    const{login,register}=this.state;
     return (
       <>
         <Navbar bg="dark" variant="dark">
@@ -14,12 +23,50 @@ class Header extends Component {
           </Navbar.Brand>
           <Navbar.Collapse />
           <div className="button1">
-          <Button variant="outline-light">로그인</Button>
+          <Button variant="outline-light" onClick={()=>this.setState({login: true})}>로그인</Button>
           </div>
+          
           <div className="button2">
-          <Button variant="outline-light">회원가입</Button>
+          <Button variant="outline-light" onClick={()=>this.setState({register: true})}>회원가입</Button>
           </div>
         </Navbar>
+        <Modal show={login} onHide={()=>this.setState({login: false})} animation={false}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={()=>this.setState({login: false})}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={()=>this.setState({login: false})}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      <Modal show={register}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+      onHide={()=>this.setState({register: false})} animation={false}
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Modal heading
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Centered Modal</h4>
+        <p>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+          consectetur ac, vestibulum at eros.
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={()=>this.setState({register: false})}>Close</Button>
+      </Modal.Footer>
+    </Modal>
       </>
     );
   }
