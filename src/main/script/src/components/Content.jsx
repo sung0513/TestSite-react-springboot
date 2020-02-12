@@ -17,10 +17,10 @@ class Content extends Component {
       <Row>
         {categoryList.map(list => (
           <Card className="card" bg="dark" style={{ width: "20rem" }}>
-            <Card.Img
+             <a href={"category"+list.id}><Card.Img
               width="300"
               height="150" src={require("../img/category"+list.id+".png")}
-            />
+            /></a>
             <Card.Body>
               <Card.Title>{list.name}</Card.Title>
             </Card.Body>
