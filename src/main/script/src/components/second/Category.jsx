@@ -13,7 +13,7 @@ class Category extends Component {
     ];
     return (
       <Nav variant="tabs" defaultActiveKey="/second">
-        <Nav.Item key="0">
+        <Nav.Item>
           <Nav.Link href="/second">전체보기</Nav.Link>
         </Nav.Item>
         {categoryList.map(list => (
