@@ -3,13 +3,14 @@ import {Row} from 'react-bootstrap';
 import Category from "./Category";
 import Storelist from "./Storelist";
 
-class secondContent extends Component {
-  render() {
+class SecondContent extends Component {
 
+  render() {
+    const {keyID}=this.props;
     return( 
     <>
 
-    <Category />
+    <Category keyID={keyID}/>
     <Row>
     <Storelist />
     </Row>
@@ -19,4 +20,6 @@ class secondContent extends Component {
   
 }
 
-export default secondContent;
+
+
+export default SecondContent;

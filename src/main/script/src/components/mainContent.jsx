@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card, Row, Container } from "react-bootstrap";
 import '../App.css';
-class Content extends Component {
+class MainContent extends Component {
   render() {
     const categoryList = [
       { id: 1, name: "치킨" },
@@ -16,7 +16,7 @@ class Content extends Component {
       <Container >
       <Row>
       <Card key="0" className="card" bg="dark" style={{ width: "20rem" }}>
-             <a href="/second"><Card.Img
+             <a href="/all"><Card.Img
               width="300"
               height="150" 
             /></a>
@@ -41,4 +41,4 @@ class Content extends Component {
   }
 }
 
-export default Content;
+export default MainContent;

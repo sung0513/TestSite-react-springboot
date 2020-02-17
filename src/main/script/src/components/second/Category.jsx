@@ -11,10 +11,11 @@ class Category extends Component {
       { id: 6, name: "족발/보쌈" },
       { id: 7, name: "분식" }
     ];
+    const {keyID}=this.props;
     return (
-      <Nav variant="tabs" defaultActiveKey="/second">
+      <Nav variant="tabs" defaultActiveKey={keyID}>
         <Nav.Item>
-          <Nav.Link href="/second">전체보기</Nav.Link>
+          <Nav.Link href="/all">전체보기</Nav.Link>
         </Nav.Item>
         {categoryList.map(list => (
           <Nav.Item key={list.id}>
@@ -25,5 +26,8 @@ class Category extends Component {
     );
   }
 }
+Category.defaultProps = {
+  keyID: '/all'
+};
 
 export default Category;
