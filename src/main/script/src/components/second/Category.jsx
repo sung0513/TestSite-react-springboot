@@ -10,17 +10,10 @@ class Category extends Component {
     this.foodStore = foodStore;
   }
   render() {
-    const { categoryList, tabKey, onClickTab } = this.foodStore;
-    console.log("tabKey:" + tabKey);
+    const { categoryList, tabkey, changeTab } = this.foodStore;
+    console.log("tabkey:" + tabkey);
     return (
-      <Nav
-        variant="tabs"
-        activeKey={tabKey}
-        onSelect={() => onClickTab(tabKey)}
-      >
-        <Nav.Item>
-          <Nav.Link href="/all">전체보기</Nav.Link>
-        </Nav.Item>
+      <Nav variant="tabs" activeKey={tabkey} onSelect={changeTab}>
         {categoryList.map(list => (
           <Nav.Item key={list.id}>
             <Nav.Link eventKey={list.id}>{list.name}</Nav.Link>

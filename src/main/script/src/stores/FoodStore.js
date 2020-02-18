@@ -4,6 +4,7 @@ import { observable, action } from "mobx";
 export default class FoodStore {
   @observable
   categoryList = [
+    { id: 0, name: "전체보기" },
     { id: 1, name: "치킨" },
     { id: 2, name: "피자/양식" },
     { id: 3, name: "중국집" },
@@ -14,12 +15,20 @@ export default class FoodStore {
   ];
 
   @observable
-  tabkey = "/all";
+  tabkey = 0;
 
   @action
-  onClickTab = key => {
-    console.log(key + "선택");
+  changeTab = e => {
+    console.log(e + "선택");
+    this.tabkey = e;
+    console.log(this.tabkey + "현재");
+  };
+
+  @action
+  handleSelect = key => {
+    console.log("key:" + key);
     this.tabkey = key;
+    console.log(this.tabkey + "현재");
   };
 
   @observable
