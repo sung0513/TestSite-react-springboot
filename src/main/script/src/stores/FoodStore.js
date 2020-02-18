@@ -1,4 +1,4 @@
-import { observable } from "mobx";
+import { observable, action } from "mobx";
 
 //@Autobind
 export default class FoodStore {
@@ -12,4 +12,28 @@ export default class FoodStore {
     { id: 6, name: "족발/보쌈" },
     { id: 7, name: "분식" }
   ];
+
+  @observable
+  tabkey = "/all";
+
+  @action
+  onClickTab = key => {
+    console.log(key + "선택");
+    this.tabkey = key;
+  };
+
+  @observable
+  headerState = {
+    login: false,
+    register: false
+  };
+
+  @action
+  onClickLogin = () => {
+    console.log("onClickLogin");
+    this.headerState = {
+      ...this.headerState,
+      login: true
+    };
+  };
 }
