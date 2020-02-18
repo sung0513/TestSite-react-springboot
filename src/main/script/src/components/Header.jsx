@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 import logo from "../img/logo.png";
-import { Image, Navbar, Button, Modal, Form,InputGroup,FormControl } from "react-bootstrap";
+import {
+  Image,
+  Navbar,
+  Button,
+  Modal,
+  Form,
+  InputGroup,
+  FormControl
+} from "react-bootstrap";
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -30,7 +38,7 @@ class Header extends Component {
               로그인
             </Button>
           </div>
-          
+
           <div className="button2">
             <Button
               variant="outline-light"
@@ -40,31 +48,34 @@ class Header extends Component {
             </Button>
           </div>
         </Navbar>
-        <Modal show={login} onHide={() => this.setState({ login: false })} animation={false}>
+        <Modal
+          show={login}
+          onHide={() => this.setState({ login: false })}
+          animation={false}
+        >
           <Modal.Header closeButton>
             <Modal.Title>로그인</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-          <Form>
-  <Form.Group controlId="formBasicEmail">
-    <Form.Label>ID</Form.Label>
-    <Form.Control type="email" placeholder="ID" />
-  </Form.Group>
+            <Form>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>ID</Form.Label>
+                <Form.Control type="email" placeholder="ID" />
+              </Form.Group>
 
-  <Form.Group controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-  <Form.Group controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="자동 로그인" />
-  </Form.Group>
-</Form>
-
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" placeholder="Password" />
+              </Form.Group>
+              <Form.Group controlId="formBasicCheckbox">
+                <Form.Check type="checkbox" label="자동 로그인" />
+              </Form.Group>
+            </Form>
           </Modal.Body>
           <Modal.Footer>
-          <Button variant="primary" type="submit">
-    로그인
-  </Button>
+            <Button variant="primary" type="submit">
+              로그인
+            </Button>
             <Button
               variant="secondary"
               onClick={() => this.setState({ login: false })}
@@ -83,75 +94,66 @@ class Header extends Component {
           </Modal.Header>
           <Modal.Body>
             <label>아이디 입력</label>
-          <InputGroup className="mb-3">
-    <FormControl
-      
-      aria-label="ID"
-      aria-describedby="basic-addon2"
-    />
-    <InputGroup.Append>
-      <Button variant="outline-secondary">중복확인</Button>
-    </InputGroup.Append>
-  </InputGroup>
-<label>비밀번호 입력</label>
-  <InputGroup className="mb-3">
-    <FormControl type="password"
-      
-      aria-label="password"
-      aria-describedby="basic-addon2"
-    />
-    <InputGroup.Append>
-      <Button variant="outline-secondary">확인</Button>
-    </InputGroup.Append>
-  </InputGroup>
+            <InputGroup className="mb-3">
+              <FormControl aria-label="ID" aria-describedby="basic-addon2" />
+              <InputGroup.Append>
+                <Button variant="outline-secondary">중복확인</Button>
+              </InputGroup.Append>
+            </InputGroup>
+            <label>비밀번호 입력</label>
+            <InputGroup className="mb-3">
+              <FormControl
+                type="password"
+                aria-label="password"
+                aria-describedby="basic-addon2"
+              />
+              <InputGroup.Append>
+                <Button variant="outline-secondary">확인</Button>
+              </InputGroup.Append>
+            </InputGroup>
 
-  <InputGroup className="mb-3">
-    <FormControl type="password"
-      placeholder="비밀번호 재입력"
-      aria-label="password"
-      aria-describedby="basic-addon2"
-    />
-    
-    <InputGroup.Append>
-      <Button variant="outline-secondary">확인</Button>
-    </InputGroup.Append>
-  </InputGroup>
-<label>휴대폰 인증</label>
-  <InputGroup className="mb-3">
-  <Form.Control as="select">
-        <option>통신사</option>
-        <option>SKT</option>
-        <option>KT</option>
-        <option>LG U+</option>
-      </Form.Control>
-    <FormControl
-      aria-label="phone"
-      aria-describedby="basic-addon2"
-    /> -     <FormControl
-    aria-label="phone"
-    aria-describedby="basic-addon2"
-  /> -     <FormControl
-  aria-label="phone"
-  aria-describedby="basic-addon2"
-/>
-    
-    <InputGroup.Append>
-      <Button variant="outline-secondary">인증번호 요청</Button>
-    </InputGroup.Append>
-  </InputGroup>
-  <InputGroup className="mb-3">
-    <FormControl
-      placeholder="인증번호 입력"
-      aria-label="authentication"
-      aria-describedby="basic-addon2"
-    />
-    <InputGroup.Append>
-      <Button variant="outline-secondary">인증</Button>
-    </InputGroup.Append>
-  </InputGroup>
+            <InputGroup className="mb-3">
+              <FormControl
+                type="password"
+                placeholder="비밀번호 재입력"
+                aria-label="password"
+                aria-describedby="basic-addon2"
+              />
+
+              <InputGroup.Append>
+                <Button variant="outline-secondary">확인</Button>
+              </InputGroup.Append>
+            </InputGroup>
+            <label>휴대폰 인증</label>
+            <InputGroup className="mb-3">
+              <Form.Control as="select">
+                <option>통신사</option>
+                <option>SKT</option>
+                <option>KT</option>
+                <option>LG U+</option>
+              </Form.Control>
+              <FormControl aria-label="phone" aria-describedby="basic-addon2" />{" "}
+              -{" "}
+              <FormControl aria-label="phone" aria-describedby="basic-addon2" />{" "}
+              -{" "}
+              <FormControl aria-label="phone" aria-describedby="basic-addon2" />
+              <InputGroup.Append>
+                <Button variant="outline-secondary">인증번호 요청</Button>
+              </InputGroup.Append>
+            </InputGroup>
+            <InputGroup className="mb-3">
+              <FormControl
+                placeholder="인증번호 입력"
+                aria-label="authentication"
+                aria-describedby="basic-addon2"
+              />
+              <InputGroup.Append>
+                <Button variant="outline-secondary">인증</Button>
+              </InputGroup.Append>
+            </InputGroup>
           </Modal.Body>
           <Modal.Footer>
-          <Button
+            <Button
               variant="secondary"
               onClick={() => this.setState({ register: false })}
             >

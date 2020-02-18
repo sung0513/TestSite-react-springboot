@@ -3,32 +3,36 @@ import Header from "./components/Header";
 import Search from "./components/Search";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Footer from "./components/Footer";
-import mainContent from "./components/mainContent";
-import secondContent from "./components/second/secondContent";
-import thirdContent from "./components/third/thirdContent";
+import MainContent from "./components/MainContent";
+import SecondContent from "./components/second/SecondContent";
+import ThirdContent from "./components/third/ThirdContent";
+import { observer, inject } from "mobx-react";
 import "./App.css";
 import "whatwg-fetch";
+
+@inject("foodStore")
+@observer
 class App extends Component {
+  constructor(props) {
+    super(props);
+    const { foodStore } = props;
+    this.foodStore = foodStore;
+  }
   render() {
-    const categoryList = [
-      { id: 0, name: "전체보기"},
-      { id: 1, name: "치킨" },
-      { id: 2, name: "피자/양식" },
-      { id: 3, name: "중국집" },
-      { id: 4, name: "한식" },
-      { id: 5, name: "일식" },
-      { id: 6, name: "족발/보쌈" },
-      { id: 7, name: "분식" }
-    ];
+    const { categoryList } = this.foodStore;
     return (
       <Router>
         <Header />
         <Search />
-        <Route exact path="/" component={mainContent} />
-        {categoryList.map(list =>(
-          <Route path={"/category"+list.id} value={list.id} component={secondContent} />
-        ))}
-        <Route path="/third" component={thirdContent}/>
+        <Route exact path="/" component={MainContent} />
+        {categoryList.map(list => (
+          <Route
+            key={list.id}
+            path={"/category" + list.id}
+            component={SecondContent}
+          />
+        ))}{" "}
+        <Route path="/third" component={ThirdContent} />
         <Footer />
       </Router>
     );
