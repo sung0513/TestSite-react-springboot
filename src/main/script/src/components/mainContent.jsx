@@ -4,6 +4,7 @@ import '../App.css';
 class Content extends Component {
   render() {
     const categoryList = [
+      { id: 0, name: "전체보기"},
       { id: 1, name: "치킨" },
       { id: 2, name: "피자/양식" },
       { id: 3, name: "중국집" },
@@ -15,15 +16,6 @@ class Content extends Component {
     return (
       <Container >
       <Row>
-      <Card key="0" className="card" bg="dark" style={{ width: "20rem" }}>
-             <a href="/second"><Card.Img
-              width="300"
-              height="150" 
-            /></a>
-            <Card.Body>
-              <Card.Title>전체보기</Card.Title>
-            </Card.Body>
-          </Card>
         {categoryList.map(list => (
           <Card key={list.id} className="card" bg="dark" style={{ width: "20rem" }}>
              <a href={"category"+list.id}><Card.Img

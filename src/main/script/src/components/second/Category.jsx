@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Nav } from "react-bootstrap";
 class Category extends Component {
   render() {
+    const {value}=this.props;
     const categoryList = [
+      { id: 0, name: "전체보기"},
       { id: 1, name: "치킨" },
       { id: 2, name: "피자/양식" },
       { id: 3, name: "중국집" },
@@ -11,17 +13,16 @@ class Category extends Component {
       { id: 6, name: "족발/보쌈" },
       { id: 7, name: "분식" }
     ];
+    
     return (
-      <Nav variant="tabs" defaultActiveKey="/second">
-        <Nav.Item>
-          <Nav.Link href="/second">전체보기</Nav.Link>
-        </Nav.Item>
+      <Nav variant="tabs" defaultActiveKey={value}>
         {categoryList.map(list => (
           <Nav.Item key={list.id}>
-            <Nav.Link eventKey={list.id}>{list.name}</Nav.Link>
+            <Nav.Link eventKey={list.id} href={"/category"+list.id} >{list.name}</Nav.Link>
           </Nav.Item>
         ))}
-      </Nav>
+        </Nav>
+
     );
   }
 }

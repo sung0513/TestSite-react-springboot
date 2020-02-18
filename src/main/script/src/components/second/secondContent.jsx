@@ -5,11 +5,9 @@ import Storelist from "./Storelist";
 
 class secondContent extends Component {
   render() {
-
     return( 
     <>
-
-    <Category />
+    <Category/>
     <Row>
     <Storelist />
     </Row>
