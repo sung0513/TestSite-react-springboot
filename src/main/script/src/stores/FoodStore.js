@@ -17,6 +17,7 @@ export default class FoodStore {
   @observable
   tabkey = 0;
 
+  @observable
   @action
   changeTab = e => {
     console.log(e + "선택");

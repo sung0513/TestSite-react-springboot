@@ -1,22 +1,50 @@
 import React, { Component } from "react";
-import { Card, Button } from "react-bootstrap";
-
+import { Card, Image, Row, Container } from "react-bootstrap";
+import { observer, inject } from "mobx-react";
+import logo from "../../img/category1.png";
+import { Link } from "react-router-dom";
+@inject("foodStore")
+@observer
 class Storelist extends Component {
+  constructor(props) {
+    super(props);
+    const { foodStore } = props;
+    this.foodStore = foodStore;
+  }
   render() {
+    const { tabkey, categoryList } = this.foodStore;
     return (
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <a href="/third">
-            <Button variant="primary">Go somewhere</Button>
-          </a>
-        </Card.Body>
-      </Card>
+      <Container className="cont">
+        <Row>
+          <Card className="card2">
+            <Link to="/third">
+              <Card.Body>
+                <Row>
+                  <Image src={logo} width="70" />
+                  <b>음식점 이름</b>
+                </Row>
+              </Card.Body>
+            </Link>
+          </Card>
+          <Card className="card2">
+            <Card.Body>
+              <Row>
+                <Image src={logo} width="70" />
+                <b>음식점 이름</b>
+              </Row>
+            </Card.Body>
+          </Card>
+
+          <Card className="card2">
+            <Card.Body>
+              <Row>
+                <Image src={logo} width="70" />
+                <b>음식점 이름</b>
+              </Row>
+            </Card.Body>
+          </Card>
+        </Row>
+      </Container>
     );
   }
 }
