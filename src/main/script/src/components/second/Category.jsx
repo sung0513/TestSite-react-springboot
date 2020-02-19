@@ -23,8 +23,5 @@ class Category extends Component {
     );
   }
 }
-Category.defaultProps = {
-  keyID: "/all"
-};
 
 export default Category;
