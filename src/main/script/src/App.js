@@ -18,6 +18,9 @@ class App extends Component {
     const { foodStore } = props;
     this.foodStore = foodStore;
   }
+  componentDidMount() {
+    this.foodStore.initialize();
+  }
   render() {
     const { categoryList } = this.foodStore;
     return (
