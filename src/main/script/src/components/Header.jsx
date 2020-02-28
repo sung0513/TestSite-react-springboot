@@ -24,10 +24,10 @@ class Header extends Component {
     return (
       <>
         <Navbar bg="dark" variant="dark">
-          <Navbar.Brand href="/">
+          <Navbar.Brand className="header" href="/">
             <Image alt="" src={logo} width="50" height="50" />
             {"   "}
-            React Bootstrap
+            Order Sytstem
           </Navbar.Brand>
           <Navbar.Collapse />
           <div className="button1">
