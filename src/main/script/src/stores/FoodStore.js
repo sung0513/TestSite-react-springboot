@@ -18,29 +18,100 @@ export default class FoodStore {
   storeList = [];
 
   @observable
-  tabkey = "0";
+  tabkey = 0;
+
+  @observable
+  selectedList = [];
+
+  @action
+  selectList = item => {
+    console.log("selectList");
+    this.selectedList = item;
+  };
 
   @action
   initialize = () => {
     console.log("initialize");
     this.storeList = [
-      { name: "BBQ", tel: "010-8805-6376", category: 1, address: "성남" },
-      { name: "피자헛", tel: "010-8805-6376", category: 2, address: "서울" },
+      {
+        name: "BBQ",
+        tel: "010-8805-6376",
+        category: 1,
+        address: "성남",
+        menu: [
+          { name: "황금올리브치킨", price: "18000" },
+          { name: "황금올리브치킨 양념", price: "19500" }
+        ]
+      },
+      {
+        name: "피자헛",
+        tel: "010-8805-6376",
+        category: 2,
+        address: "서울",
+        menu: [
+          { name: "베이컨 포테이토 L", price: "18000" },
+          { name: "대표메가더블세트", price: "19500" }
+        ]
+      },
       {
         name: "몽고반점",
         tel: "010-8805-6376",
         category: 3,
-        address: "수원"
+        address: "수원",
+        menu: [
+          { name: "자장면", price: "18000" },
+          { name: "짬뽕", price: "19500" }
+        ]
       },
-      { name: "비비고", tel: "010-8805-6376", category: 4, address: "용인" },
-      { name: "미소야", tel: "010-8805-6376", category: 5, address: "평택" },
-      { name: "가족", tel: "010-8805-6376", category: 6, address: "인천" },
-      { name: "엽떡", tel: "010-8805-6376", category: 7, address: "안산" },
+      {
+        name: "비비고",
+        tel: "010-8805-6376",
+        category: 4,
+        address: "용인",
+        menu: [
+          { name: "김밥", price: "18000" },
+          { name: "쫄면", price: "19500" }
+        ]
+      },
+      {
+        name: "미소야",
+        tel: "010-8805-6376",
+        category: 5,
+        address: "평택",
+        menu: [
+          { name: "돈까스", price: "18000" },
+          { name: "우동", price: "19500" }
+        ]
+      },
+      {
+        name: "가족",
+        tel: "010-8805-6376",
+        category: 6,
+        address: "인천",
+        menu: [
+          { name: "족발", price: "18000" },
+          { name: "보쌈", price: "19500" }
+        ]
+      },
+      {
+        name: "엽떡",
+        tel: "010-8805-6376",
+        category: 7,
+        address: "안산",
+        menu: [
+          { name: "엽떡", price: "18000" },
+          { name: "엽기 오뎅", price: "19500" }
+        ]
+      },
       {
         name: "현우네족발집",
         tel: "010-8805-6376",
         category: 6,
-        address: "부산"
+        address: "부산",
+        menu: [
+          { name: "현우족발", price: "18000" },
+          { name: "현우보쌈", price: "19500" }
+        ]
       }
     ];
   };
