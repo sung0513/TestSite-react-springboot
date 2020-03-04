@@ -21,6 +21,14 @@ export default class FoodStore {
   tabkey = 0;
 
   @observable
+  mode = 1;
+
+  @action
+  changeMode = () => {
+    this.mode === 1 ? 2 : 1;
+  };
+
+  @observable
   selectedList = [];
 
   @action

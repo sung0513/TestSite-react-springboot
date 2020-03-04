@@ -14,13 +14,14 @@ class Header extends Component {
     super(props);
     this.state = {
       login: false,
-      register: false
+      register: false,
+      mode: 1
     };
   }
   handleShow = () => this.setState({ show: true });
   handleClose = () => this.setState({ show: false });
   render() {
-    const { login, register } = this.state;
+    const { login, register, mode } = this.state;
     return (
       <>
         <Navbar bg="dark" variant="dark">
@@ -30,23 +31,50 @@ class Header extends Component {
             Order Sytstem
           </Navbar.Brand>
           <Navbar.Collapse />
-          <div className="button1">
-            <Button
-              variant="outline-light"
-              onClick={() => this.setState({ login: true })}
-            >
-              로그인
-            </Button>
-          </div>
+          <Button onClick={() => this.setState({ mode: mode === 1 ? 2 : 1 })}>
+            mode
+          </Button>
+          {mode === 1 ? (
+            <>
+              <div className="button1">
+                <Button
+                  variant="outline-light"
+                  onClick={() => this.setState({ login: true })}
+                >
+                  로그인
+                </Button>
+              </div>
 
-          <div className="button2">
-            <Button
-              variant="outline-light"
-              onClick={() => this.setState({ register: true })}
-            >
-              회원가입
-            </Button>
-          </div>
+              <div className="button2">
+                <Button
+                  variant="outline-light"
+                  onClick={() => this.setState({ register: true })}
+                >
+                  회원가입
+                </Button>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="button1">
+                <Button
+                  variant="outline-light"
+                  onClick={() => this.setState({ login: true })}
+                >
+                  로그아웃
+                </Button>
+              </div>
+
+              <div className="button2">
+                <Button
+                  variant="outline-light"
+                  onClick={() => this.setState({ register: true })}
+                >
+                  MY 정보
+                </Button>
+              </div>
+            </>
+          )}
         </Navbar>
         <Modal
           show={login}

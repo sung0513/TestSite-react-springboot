@@ -90,7 +90,7 @@ class Storeinfo extends Component {
               </Card.Body>
               <Card.Footer>
                 {" "}
-                <Button variant="dark">Go somewhere</Button>
+                <Button variant="dark">주문하기</Button>
               </Card.Footer>
             </Card>
           </Col>
