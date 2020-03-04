@@ -1,4 +1,4 @@
-import { observable, action } from "mobx";
+import { observable, action, computed } from "mobx";
 
 //@Autobind
 export default class FoodStore {
@@ -16,6 +16,34 @@ export default class FoodStore {
 
   @observable
   storeList = [];
+
+  @observable
+  selectedMenu = [];
+
+  @action
+  putItem = (name, price) => {
+    const exist = this.selectedMenu.find(item => item.name === name);
+    if (!exist) {
+      this.selectedMenu.push({ name, price, count: 1 });
+      return;
+    }
+    exist.count++;
+  };
+
+  @action
+  takeItem = name => {
+    const item = this.selectedMenu.find(item => item.name === name);
+    item.count--;
+    if (item.count === 0) this.selectedMenu.remove(item);
+  };
+
+  @computed
+  get total() {
+    console.log("총합 계산...");
+    return this.selectedMenu.reduce((previous, current) => {
+      return previous + parseInt(current.price) * current.count;
+    }, 0);
+  }
 
   @observable
   tabkey = 0;

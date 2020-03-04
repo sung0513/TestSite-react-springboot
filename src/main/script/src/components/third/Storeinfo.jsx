@@ -22,7 +22,14 @@ class Storeinfo extends Component {
     this.foodStore = foodStore;
   }
   render() {
-    const { selectedList } = this.foodStore;
+    const {
+      selectedList,
+      selectedMenu,
+      putItem,
+      takeItem,
+      total
+    } = this.foodStore;
+
     return (
       <Container>
         <Row>
@@ -73,7 +80,10 @@ class Storeinfo extends Component {
             <Row>
               <ListGroup>
                 {selectedList.menu.map(item => (
-                  <ListGroup.Item key={item.name}>
+                  <ListGroup.Item
+                    key={item.name}
+                    onClick={() => putItem(item.name, item.price)}
+                  >
                     {item.name}
                     <br />
                     {item.price}
@@ -83,10 +93,20 @@ class Storeinfo extends Component {
             </Row>
           </Col>
           <Col md={{ span: 4, offset: 4 }}>
-            <Card style={{ width: "18rem", color: "black" }}>
+            <Card style={{ width: "18rem", height: "400px", color: "black" }}>
               <Card.Header as="h5">주문표</Card.Header>
               <Card.Body>
-                <Card.Text>주문표에 담긴 메뉴가 없습니다.</Card.Text>
+                <Card.Text>
+                  {selectedMenu.map(item => (
+                    <div onClick={() => takeItem(item.name)}>
+                      {item.name} {item.price}원 {item.count}
+                    </div>
+                  ))}
+                  <hr />
+                  <p>
+                    <b>총합: {total}</b> 원
+                  </p>
+                </Card.Text>
               </Card.Body>
               <Card.Footer>
                 {" "}
