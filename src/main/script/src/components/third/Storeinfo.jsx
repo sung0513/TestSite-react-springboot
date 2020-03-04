@@ -8,6 +8,7 @@ import {
   Card,
   Button
 } from "react-bootstrap";
+import { IoMdRemoveCircleOutline } from "react-icons/io";
 
 import log1 from "../../img/category1.png";
 import log2 from "../../img/category2.png";
@@ -98,8 +99,11 @@ class Storeinfo extends Component {
               <Card.Body>
                 <Card.Text>
                   {selectedMenu.map(item => (
-                    <div onClick={() => takeItem(item.name)}>
-                      {item.name} {item.price}원 {item.count}
+                    <div>
+                      {item.name} {item.price}원 {item.count}{" "}
+                      <IoMdRemoveCircleOutline
+                        onClick={() => takeItem(item.name)}
+                      />
                     </div>
                   ))}
                   <hr />
