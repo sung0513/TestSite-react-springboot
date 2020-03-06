@@ -4,6 +4,7 @@ import Storeinfo from "./Storeinfo";
 class ThirdContent extends Component {
   render() {
     return (
+      //test
       <>
         <Category />
         <Storeinfo />

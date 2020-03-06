@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import { Nav } from "react-bootstrap";
-import { observer, inject } from "mobx-react";
+import React, { Component } from "./node_modules/react";
+import { Nav } from "./node_modules/react-bootstrap";
+import { observer, inject } from "./node_modules/mobx-react";
 import "../../App.css";
 @inject("foodStore")
 @observer
 class Category extends Component {
+  //test
   constructor(props) {
     super(props);
     const { foodStore } = props;
