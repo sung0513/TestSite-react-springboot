@@ -13,7 +13,7 @@ import { IoMdRemoveCircleOutline } from "react-icons/io";
 import log1 from "../../img/category1.png";
 import log2 from "../../img/category2.png";
 import log3 from "../../img/category3.png";
-import { observer, inject } from "../Second/node_modules/mobx-react";
+import { observer, inject } from "mobx-react";
 @inject("foodStore")
 @observer
 class Storeinfo extends Component {
@@ -80,7 +80,7 @@ class Storeinfo extends Component {
               </Carousel>
             </Row>
             <Row>
-              <ListGroup>
+              <ListGroup style={{ width: "1000px"}}>
                 {selectedList.menu.map(item => (
                   <ListGroup.Item
                     key={item.name}

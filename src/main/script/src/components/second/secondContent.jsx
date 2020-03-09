@@ -1,14 +1,13 @@
-import React, { Component } from "./node_modules/react";
-import { Row } from "./node_modules/react-bootstrap";
-import Category from "./secCategory";
+import React, { Component } from "react";
+import { Row } from "react-bootstrap";
+import Category from "./Category";
 import Storelist from "./Storelist";
 
 class SecondContent extends Component {
-  //test
   render() {
     return (
       <>
-        <Category />
+        <Category/>
         <Row>
           <Storelist />
         </Row>

@@ -1,6 +1,6 @@
-import React, { Component } from "./node_modules/react";
-import { Nav } from "./node_modules/react-bootstrap";
-import { observer, inject } from "./node_modules/mobx-react";
+import React, { Component } from "react";
+import { Nav } from "react-bootstrap";
+import { observer, inject } from "mobx-react";
 import "../../App.css";
 @inject("foodStore")
 @observer
