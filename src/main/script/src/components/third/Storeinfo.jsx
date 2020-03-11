@@ -6,7 +6,8 @@ import {
   Col,
   ListGroup,
   Card,
-  Button
+  Button,
+  Modal
 } from "react-bootstrap";
 import { IoMdRemoveCircleOutline } from "react-icons/io";
 
@@ -17,11 +18,16 @@ import { observer, inject } from "mobx-react";
 @inject("foodStore")
 @observer
 class Storeinfo extends Component {
+
   constructor(props) {
     super(props);
     const { foodStore } = props;
     this.foodStore = foodStore;
+    this.state={
+      order:false
+    };
   }
+  
   render() {
     //test
     const {
@@ -31,7 +37,7 @@ class Storeinfo extends Component {
       takeItem,
       total
     } = this.foodStore;
-
+    const{order}=this.state;
     return (
       <Container>
         <Row>
@@ -115,7 +121,21 @@ class Storeinfo extends Component {
               </Card.Body>
               <Card.Footer>
                 {" "}
-                <Button variant="dark">주문하기</Button>
+                <Button variant="dark"onClick={() => this.setState({ order: true })} >주문하기</Button>
+                <Modal show={order} onHide={() => this.setState({ order: false })}>
+
+        <Modal.Body>
+          주문하시겠습니까?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => this.setState({ order: false })}>
+            주문
+          </Button>
+          <Button variant="primary" onClick={() => this.setState({ order: false })}>
+            취소
+          </Button>
+        </Modal.Footer>
+      </Modal>
               </Card.Footer>
             </Card>
           </Col>

@@ -19,8 +19,7 @@ class Header extends Component {
       mode: 1
     };
   }
-  handleShow = () => this.setState({ show: true });
-  handleClose = () => this.setState({ show: false });
+
   render() {
     const { login, register, mode } = this.state;
     return (
