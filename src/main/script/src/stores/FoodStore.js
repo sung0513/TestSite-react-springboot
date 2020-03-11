@@ -45,17 +45,6 @@ export default class FoodStore {
     }, 0);
   }
 
-  //@observable
-  //tabkey = 0;
-
-  @observable
-  mode = 1;
-
-  @action
-  changeMode = () => {
-    this.mode === 1 ? 2 : 1;
-  };
-
   @observable
   selectedList = [];
 
@@ -68,7 +57,6 @@ export default class FoodStore {
   @action
   initialize = () => {
     console.log("initialize");
-    //window.sessionStorage.setItem("tabkey", 0);
     this.storeList = [
       {
         name: "BBQ",
@@ -160,8 +148,7 @@ export default class FoodStore {
   @action
   changeTab = e => {
     console.log("changeTab");
-    //this.tabkey = parseInt(e); //eventKey가 string으로 넘어옴
-    window.sessionStorage.setItem("tabkey", parseInt(e));
+    window.sessionStorage.setItem("tabkey", parseInt(e)); //eventKey가 string으로 넘어옴
     this.initialize();
   };
 
@@ -170,14 +157,5 @@ export default class FoodStore {
     console.log("handleSelect");
     window.sessionStorage.setItem("tabkey", key);
     this.initialize();
-  };
-
-  @action
-  onClickLogin = () => {
-    console.log("onClickLogin");
-    this.headerState = {
-      ...this.headerState,
-      login: true
-    };
   };
 }

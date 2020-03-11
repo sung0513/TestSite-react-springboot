@@ -32,7 +32,9 @@ class Header extends Component {
             Giant Dish
           </Navbar.Brand>
           <Navbar.Collapse />
-
+          <Button onClick={() => this.setState({ mode: mode === 1 ? 2 : 1 })}>
+            mode
+          </Button>
           {mode === 1 ? (
             <>
               <div className="button1">
@@ -71,12 +73,11 @@ class Header extends Component {
               </div>
             </>
           )}
-          <Button
-            variant="outline-light"
-            onClick={() => this.setState({ mode: mode === 1 ? 2 : 1 })}
-          >
-            <TiShoppingCart />
-          </Button>
+          <Link to="/cart">
+            <Button variant="outline-light">
+              <TiShoppingCart />
+            </Button>
+          </Link>
         </Navbar>
         <Modal
           show={login}

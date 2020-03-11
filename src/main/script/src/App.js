@@ -6,6 +6,7 @@ import MainContent from "./components/MainContent";
 import SecondContent from "./components/second/SecondContent";
 import ThirdContent from "./components/third/ThirdContent";
 import Myinfo from "./components/Myinfo";
+import Cart from "./components/Cart";
 import { observer, inject } from "mobx-react";
 import "./App.css";
 import "whatwg-fetch";
@@ -35,6 +36,7 @@ class App extends Component {
           />
         ))}{" "}
         <Route path="/store" component={ThirdContent} />
+        <Route path="/cart" component={Cart} />
         <Route path="/myinfo" component={Myinfo} />
         <Footer />
       </Router>
