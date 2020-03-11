@@ -162,38 +162,14 @@ export default class FoodStore {
     console.log("changeTab");
     //this.tabkey = parseInt(e); //eventKey가 string으로 넘어옴
     window.sessionStorage.setItem("tabkey", parseInt(e));
-    this.changeList();
-  };
-
-  @action
-  changeList = () => {
     this.initialize();
-    console.log("changeList");
-    const list = [...this.storeList];
-    console.log("list:", list);
-    //const key = this.tabkey;
-    const key = parseInt(window.sessionStorage.getItem("tabkey"));
-    console.log("key:", key);
-    //this.storeList =
-    //  key === 0 ? list : list.filter(item => item.category === key);
-    console.log(
-      "storeList:",
-      list.filter(item => item.category === key)
-    );
   };
 
   @action
   handleSelect = key => {
     console.log("handleSelect");
-    //this.tabkey = key;
     window.sessionStorage.setItem("tabkey", key);
-    this.changeList();
-  };
-
-  @observable
-  headerState = {
-    login: false,
-    register: false
+    this.initialize();
   };
 
   @action
