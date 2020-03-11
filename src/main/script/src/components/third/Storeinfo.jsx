@@ -23,6 +23,7 @@ class Storeinfo extends Component {
     this.foodStore = foodStore;
   }
   render() {
+    //test
     const {
       selectedList,
       selectedMenu,

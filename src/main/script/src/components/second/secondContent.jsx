@@ -8,7 +8,6 @@ class SecondContent extends Component {
   render() {
     return (
       <>
-        <Search />
         <Category />
         <Row>
           <Storelist />

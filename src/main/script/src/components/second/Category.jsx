@@ -5,6 +5,7 @@ import "../../App.css";
 @inject("foodStore")
 @observer
 class Category extends Component {
+  //test
   constructor(props) {
     super(props);
     const { foodStore } = props;
