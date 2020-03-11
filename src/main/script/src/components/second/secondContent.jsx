@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { Row } from "react-bootstrap";
 import Category from "./Category";
 import Storelist from "./Storelist";
+import Search from "../Search";
 
 class SecondContent extends Component {
   render() {
     return (
       <>
+        <Search />
         <Category />
         <Row>
           <Storelist />

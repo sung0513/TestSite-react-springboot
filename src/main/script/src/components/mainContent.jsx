@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Card, Row, Container } from "react-bootstrap";
 import { observer, inject } from "mobx-react";
 import { Link } from "react-router-dom";
+import Search from "./Search";
 import "../App.css";
 
 @inject("foodStore")
@@ -15,32 +16,35 @@ class MainContent extends Component {
   render() {
     const { categoryList, handleSelect } = this.foodStore;
     return (
-      <Container>
-        <Row>
-          {categoryList.map(list => (
-            <Card
-              key={list.id}
-              className="card"
-              bg="dark"
-              style={{ width: "20rem" }}
-            >
-              <Link
-                to={"category" + list.id}
-                onClick={() => handleSelect(list.id)}
+      <>
+        <Search />
+        <Container>
+          <Row>
+            {categoryList.map(list => (
+              <Card
+                key={list.id}
+                className="card"
+                bg="dark"
+                style={{ width: "20rem" }}
               >
-                <Card.Img
-                  width="300"
-                  height="150"
-                  src={require("../img/category" + list.id + ".png")}
-                />
-              </Link>
-              <Card.Body>
-                <Card.Title>{list.name}</Card.Title>
-              </Card.Body>
-            </Card>
-          ))}
-        </Row>
-      </Container>
+                <Link
+                  to={"category" + list.id}
+                  onClick={() => handleSelect(list.id)}
+                >
+                  <Card.Img
+                    width="300"
+                    height="150"
+                    src={require("../img/category" + list.id + ".png")}
+                  />
+                </Link>
+                <Card.Body>
+                  <Card.Title>{list.name}</Card.Title>
+                </Card.Body>
+              </Card>
+            ))}
+          </Row>
+        </Container>
+      </>
     );
   }
 }

@@ -79,7 +79,7 @@ class Storeinfo extends Component {
               </Carousel>
             </Row>
             <Row>
-              <ListGroup>
+              <ListGroup style={{ width: "1000px" }}>
                 {selectedList.menu.map(item => (
                   <ListGroup.Item
                     key={item.name}

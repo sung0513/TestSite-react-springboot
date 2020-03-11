@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Header from "./components/Header";
-import Search from "./components/Search";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import MainContent from "./components/MainContent";
@@ -26,7 +25,6 @@ class App extends Component {
     return (
       <Router>
         <Header />
-        <Search />
         <Route exact path="/" component={MainContent} />
         {categoryList.map(list => (
           <Route
@@ -36,6 +34,7 @@ class App extends Component {
           />
         ))}{" "}
         <Route path="/third" component={ThirdContent} />
+        <Route path="/myinfo" component={ThirdContent} />
         <Footer />
       </Router>
     );
