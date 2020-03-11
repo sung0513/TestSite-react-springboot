@@ -12,7 +12,7 @@ class MainContent extends Component {
     super(props);
     const { foodStore } = props;
     this.foodStore = foodStore;
-  }
+  } //
   render() {
     const { categoryList, handleSelect } = this.foodStore;
     return (

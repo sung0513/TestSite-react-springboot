@@ -6,6 +6,7 @@ import Search from "../Search";
 
 class SecondContent extends Component {
   render() {
+    //
     return (
       <>
         <Category />
