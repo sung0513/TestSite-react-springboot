@@ -9,6 +9,7 @@ class SecondContent extends Component {
     //
     return (
       <>
+        <Search />
         <Category />
         <Row>
           <Storelist />

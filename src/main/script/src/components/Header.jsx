@@ -9,6 +9,7 @@ import {
   InputGroup,
   FormControl
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -28,7 +29,7 @@ class Header extends Component {
           <Navbar.Brand className="header" href="/">
             <Image alt="" src={logo} width="50" height="50" />
             {"   "}
-            Order Sytstem
+            Giant Dish
           </Navbar.Brand>
           <Navbar.Collapse />
           <Button onClick={() => this.setState({ mode: mode === 1 ? 2 : 1 })}>
@@ -66,12 +67,9 @@ class Header extends Component {
               </div>
 
               <div className="button2">
-                <Button
-                  variant="outline-light"
-                  onClick={() => this.setState({ register: true })}
-                >
-                  MY 정보
-                </Button>
+                <Link to="/myinfo">
+                  <Button variant="outline-light">MY 정보</Button>
+                </Link>
               </div>
             </>
           )}
