@@ -10,6 +10,7 @@ import {
   FormControl
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { TiShoppingCart } from "react-icons/ti";
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -31,9 +32,7 @@ class Header extends Component {
             Giant Dish
           </Navbar.Brand>
           <Navbar.Collapse />
-          <Button onClick={() => this.setState({ mode: mode === 1 ? 2 : 1 })}>
-            mode
-          </Button>
+
           {mode === 1 ? (
             <>
               <div className="button1">
@@ -72,6 +71,12 @@ class Header extends Component {
               </div>
             </>
           )}
+          <Button
+            variant="outline-light"
+            onClick={() => this.setState({ mode: mode === 1 ? 2 : 1 })}
+          >
+            <TiShoppingCart />
+          </Button>
         </Navbar>
         <Modal
           show={login}
