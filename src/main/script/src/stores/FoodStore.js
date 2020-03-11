@@ -45,8 +45,8 @@ export default class FoodStore {
     }, 0);
   }
 
-  @observable
-  tabkey = 0;
+  //@observable
+  //tabkey = 0;
 
   @observable
   mode = 1;
@@ -68,6 +68,7 @@ export default class FoodStore {
   @action
   initialize = () => {
     console.log("initialize");
+    //window.sessionStorage.setItem("tabkey", 0);
     this.storeList = [
       {
         name: "BBQ",
@@ -150,12 +151,17 @@ export default class FoodStore {
         ]
       }
     ];
+    const list = [...this.storeList];
+    const key = parseInt(window.sessionStorage.getItem("tabkey"));
+    this.storeList =
+      key === 0 ? list : list.filter(item => item.category === key);
   };
 
   @action
   changeTab = e => {
     console.log("changeTab");
-    this.tabkey = parseInt(e); //eventKey가 string으로 넘어옴
+    //this.tabkey = parseInt(e); //eventKey가 string으로 넘어옴
+    window.sessionStorage.setItem("tabkey", parseInt(e));
     this.changeList();
   };
 
@@ -164,15 +170,23 @@ export default class FoodStore {
     this.initialize();
     console.log("changeList");
     const list = [...this.storeList];
-    const key = this.tabkey;
-    this.storeList =
-      key === 0 ? list : list.filter(item => item.category === key);
+    console.log("list:", list);
+    //const key = this.tabkey;
+    const key = parseInt(window.sessionStorage.getItem("tabkey"));
+    console.log("key:", key);
+    //this.storeList =
+    //  key === 0 ? list : list.filter(item => item.category === key);
+    console.log(
+      "storeList:",
+      list.filter(item => item.category === key)
+    );
   };
 
   @action
   handleSelect = key => {
     console.log("handleSelect");
-    this.tabkey = key;
+    //this.tabkey = key;
+    window.sessionStorage.setItem("tabkey", key);
     this.changeList();
   };
 

@@ -22,12 +22,7 @@ class Myinfo extends Component {
         <Button variant="primary" type="submit">
           로그인
         </Button>
-        <Button
-          variant="secondary"
-          onClick={() => this.setState({ login: false })}
-        >
-          취소
-        </Button>
+        <Button variant="secondary">취소</Button>
       </Container>
     );
   }

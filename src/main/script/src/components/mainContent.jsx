@@ -28,8 +28,8 @@ class MainContent extends Component {
                 style={{ width: "20rem" }}
               >
                 <Link
-                  to={"category" + list.id}
                   onClick={() => handleSelect(list.id)}
+                  to={"/category" + list.id}
                 >
                   <Card.Img
                     width="300"

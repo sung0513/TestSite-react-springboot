@@ -34,7 +34,7 @@ class App extends Component {
             component={SecondContent}
           />
         ))}{" "}
-        <Route path="/third" component={ThirdContent} />
+        <Route path="/store" component={ThirdContent} />
         <Route path="/myinfo" component={Myinfo} />
         <Footer />
       </Router>

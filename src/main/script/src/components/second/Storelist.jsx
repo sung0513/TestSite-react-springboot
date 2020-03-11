@@ -11,13 +11,14 @@ class Storelist extends Component {
     this.foodStore = foodStore;
   }
   render() {
-    const { tabkey, storeList, selectList } = this.foodStore;
+    const { storeList, selectList } = this.foodStore;
+    const tabkey = window.sessionStorage.getItem("tabkey");
     return (
       <Container className="cont">
         <Row>
           {storeList.map(item => (
             <Card key={item.name} className="card2">
-              <Link to="/third" onClick={() => selectList(item)}>
+              <Link to="/store" onClick={() => selectList(item)}>
                 <Card.Body>
                   <Row>
                     <Image

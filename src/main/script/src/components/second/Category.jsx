@@ -12,7 +12,8 @@ class Category extends Component {
     this.foodStore = foodStore;
   }
   render() {
-    const { categoryList, tabkey, changeTab } = this.foodStore;
+    const { categoryList, changeTab } = this.foodStore;
+    const tabkey = window.sessionStorage.getItem("tabkey");
     console.log("tabkey:" + tabkey);
     return (
       <div>
@@ -20,7 +21,9 @@ class Category extends Component {
           <Nav variant="pills" activeKey={tabkey} onSelect={changeTab}>
             {categoryList.map(list => (
               <Nav.Item key={list.id} className="tab">
-                <Nav.Link eventKey={list.id}>{list.name}</Nav.Link>
+                <Nav.Link eventKey={list.id} href={"category" + list.id}>
+                  {list.name}
+                </Nav.Link>
               </Nav.Item>
             ))}
           </Nav>
