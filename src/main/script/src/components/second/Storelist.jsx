@@ -35,6 +35,7 @@ class Storelist extends Component {
               </Link>
             </Card>
           ))}
+          
         </Row>
       </Container>
     );
