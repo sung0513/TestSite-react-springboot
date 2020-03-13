@@ -7,7 +7,6 @@ class ThirdContent extends Component {
     return (
       //test
       <>
-        <Search />
         <Category />
         <Storeinfo />
       </>

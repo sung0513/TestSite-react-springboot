@@ -40,6 +40,8 @@ export default class FoodStore {
   @computed
   get total() {
     console.log("총합 계산...");
+    console.log("selectedMenu:", JSON.stringify(this.selectedMenu));
+
     return this.selectedMenu.reduce((previous, current) => {
       return previous + parseInt(current.price) * current.count;
     }, 0);

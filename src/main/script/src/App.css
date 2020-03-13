@@ -59,3 +59,10 @@ a {
   padding-left: 12%;
   border: 1px solid white;
 }
+
+.order {
+  margin-top: 40px;
+  width: 92%;
+  height: 400px;
+  color: black;
+}
