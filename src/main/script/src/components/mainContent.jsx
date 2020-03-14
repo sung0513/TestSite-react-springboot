@@ -32,8 +32,7 @@ class MainContent extends Component {
                   to={"/category" + list.id}
                 >
                   <Card.Img
-                    width="300"
-                    height="150"
+                    className="zoom"
                     src={require("../img/category" + list.id + ".png")}
                   />
                 </Link>
